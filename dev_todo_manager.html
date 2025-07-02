@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire de Projets Dev</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Gestionnaire de Projets Dev</h1>
+            <p>Organisez et suivez vos projets de développement</p>
+        </div>
+
+        <div class="main-content">
+            <div class="stats" id="stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalProjects">0</div>
+                    <div class="stat-label">Projets Total</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="activeProjects">0</div>
+                    <div class="stat-label">En Cours</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="completedProjects">0</div>
+                    <div class="stat-label">Terminés</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="highPriorityProjects">0</div>
+                    <div class="stat-label">Priorité Haute</div>
+                </div>
+            </div>
+
+            <div class="project-form">
+                <h2 style="margin-bottom: 20px; color: #2c3e50;">Nouveau Projet</h2>
+                <form id="projectForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="projectName">Nom du Projet</label>
+                            <input type="text" id="projectName" required placeholder="Ex: Application web e-commerce">
+                        </div>
+                        <div class="form-group">
+                            <label for="technology">Technologie</label>
+                            <input type="text" id="technology" placeholder="Ex: React, Vue.js, Python...">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="priority">Priorité</label>
+                            <select id="priority" required>
+                                <option value="low">🟢 Basse</option>
+                                <option value="medium" selected>🟡 Moyenne</option>
+                                <option value="high">🔴 Haute</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="deadline">Date Limite</label>
+                            <input type="date" id="deadline">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" placeholder="Décrivez les objectifs et fonctionnalités du projet..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Ajouter le Projet</button>
+                </form>
+            </div>
+
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="active">En Cours</button>
+                <button class="filter-btn" data-filter="completed">Terminés</button>
+                <button class="filter-btn" data-filter="high">Priorité Haute</button>
+                <button class="filter-btn" data-filter="medium">Priorité Moyenne</button>
+                <button class="filter-btn" data-filter="low">Priorité Basse</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <div class="empty-state">
+                    <h3>Aucun projet pour le moment</h3>
+                    <p>Commencez par ajouter votre premier projet de développement !</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./script.js"></script>
+
+</html>
